@@ -4,7 +4,7 @@ let div = document.createElement('div');
 
 let frag = document.createDocumentFragment();
 
-let answer = prompt('Enter number for grid size', '16');
+let answer = prompt('Enter number for grid size', '24');
 console.log(answer)
 guy(answer)
 
@@ -33,7 +33,7 @@ button.textContent = 'Reset'
 button.addEventListener('click', () => {
   removeElementsByClass('square');
   console.log()
-  let a1 = prompt('what?');
+  let a1 = prompt('Enter number for grid size', '32');
   let s = (16 * a1) + (a1* 2);
   div.style.height = `${s}px`;
   div.style.width = `${s}px`;
@@ -67,7 +67,7 @@ function guy(answer) {
     div2.style.border = '1px solid white';
     frag.appendChild(div2);
     div2.addEventListener('mouseover', (e) => {
-      e.target.style.backgroundColor = 'purple';
+      e.target.style.backgroundColor = 'blue';
     }) 
   } div.appendChild(frag); 
 }
