@@ -1,28 +1,44 @@
 let body = document.querySelector('body');
+let button = document.createElement('button');
 let div = document.createElement('div');
+
 body.appendChild(div);
+body.appendChild(button);
+div.style.height = '256px'
+div.style.width = '256px'
+
+button.textContent = 'Reset'
+button.addEventListener('click', (e) => {
+  let answer = prompt('Enter number for grid size', '16');
+  let s = (16 * answer) + (answer * 2);
+  div.style.height = `${s}px`
+  div.style.width = `${s}px`
+  for (i = 0; i < (answer * answer); i++){
+    let div2 = document.createElement('div2');
+    div2.style.flex = '0 0 16px'
+    div2.classList.add('square')
+    div2.style.width = '16px';
+    div2.style.height = '16px';
+    div2.style.backgroundColor = 'black';
+    div2.style.border = '1px solid white';
+    frag.appendChild(div2);
+    div2.addEventListener('mouseover', (e) => {
+      e.target.style.backgroundColor = 'purple';
+    })
+  } div.appendChild(frag);
+})
+
 
 div.style.display = 'flex'
-div.style.height = '288px'
-div.style.width = '288px'
+
 div.style.border = '8px solid red';
 div.style.flexWrap = 'wrap'
 
-let styleSheets = document.styleSheets;
-console.log(styleSheets);
 
 let frag = document.createDocumentFragment();
 
-for (i = 0; i < 256; i++){
-  let div = document.createElement('div');
-  div.classList.add('square')
-  frag.appendChild(div);
-}
 
-div.appendChild(frag);
+let div2 = document.querySelector('div2')
 
-let sheet = window.document.styleSheets[0];
-sheet.insertRule('.square {width: 16px; height: 16px; background-color: black; border: 1px solid white; flex: 0 0 16px}')
-sheet.insertRule('.square:hover {background-color: blue}');
 
 
