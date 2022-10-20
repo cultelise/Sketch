@@ -1,32 +1,27 @@
 let body = document.querySelector('body');
-let th = document.createElement('th');
-let table = document.createElement('table');
-body.appendChild(table);
 
+let div = document.createElement('div');
+body.appendChild(div);
 
-table.style.height = '600px'
-table.style.width = '200px'
-table.style.border = '8px solid red';
+div.style.display = 'flex'
+div.style.height = '288px'
+div.style.width = '288px'
+div.style.border = '8px solid red';
+div.style.flexWrap = 'wrap'
 
 
 let frag = document.createDocumentFragment();
 
-for (i = 0; i <= 16; i++){
-  let th = document.createElement('th');
-  th.style.width = '16px';
-  th.style.height = '16px';
-  th.style.backgroundColor = 'white';
-  th.style.border = '8px solid black';
-  th.textContent = 'hello world';
-  frag.appendChild(th);
-  console.log(i);
+for (i = 0; i < 256; i++){
+  let div = document.createElement('div');
+  div.style.flex = '0 0 16px'
+  div.classList.add('square')
+  div.style.width = '16px';
+  div.style.height = '16px';
+  div.style.backgroundColor = 'black';
+  div.style.border = '1px solid white';
+  frag.appendChild(div);
 }
 
-table.appendChild(frag);
+div.appendChild(frag);
 
-
-
-let grid = () => { 
-  let gridArray = Array(16).fill(((th))); 
-  console.log(gridArray);
-}
