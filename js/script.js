@@ -11,11 +11,11 @@ grid(answer, shade);
 
 body.appendChild(div);
 body.appendChild(button);
-body.style.justifyContent = 'center';
-body.style.flexDirection = 'column';
-body.style.gap = '20px';
-body.style.alignItems = 'center';
 body.style.display = 'flex';
+body.style.flexDirection = 'column';
+body.style.justifyContent = 'center';
+body.style.alignItems = 'center';
+body.style.gap = '20px';
 body.style.backgroundColor = 'black';
 
 div.style.height = `${s}px`;
