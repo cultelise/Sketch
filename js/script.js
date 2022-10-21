@@ -3,10 +3,13 @@ let button = document.createElement('button');
 let div = document.createElement('div');
 
 let frag = document.createDocumentFragment();
+let shade = 50;
+let color = Math.floor(Math.random() * 360);
+
 
 let answer = prompt('Enter number for grid size', '24');
 console.log(answer)
-guy(answer)
+guy(answer, shade)
 
 let s = (16 * answer) + (answer * 2);
 
@@ -31,13 +34,14 @@ function removeElementsByClass(className) {
   
 button.textContent = 'Reset'
 button.addEventListener('click', () => {
+  let shade = 50;
   removeElementsByClass('square');
   console.log()
   let a1 = prompt('Enter number for grid size', '32');
   let s = (16 * a1) + (a1* 2);
   div.style.height = `${s}px`;
   div.style.width = `${s}px`;
-  guy(a1);
+  guy(a1, shade);
 })
 
 
@@ -54,8 +58,9 @@ button.style.width = '100px'
 
 let div2 = document.querySelector('div2')
 
+console.log(color)
 
-function guy(answer) {  
+function guy(answer, darkness) {  
   for (i = 0; i < (answer * answer); i++){
     console.log(answer)
     let div2 = document.createElement('div2');
@@ -67,8 +72,15 @@ function guy(answer) {
     div2.style.border = '1px solid white';
     frag.appendChild(div2);
     div2.addEventListener('mouseover', (e) => {
-      e.target.style.backgroundColor = 'blue';
+      console.log(e);
+      e.target.style.backgroundColor = `hsl(${Math.floor(Math.random() * 360)}, 100%, ${darkness}%)`;
+      darkness = darkness - 0.05;
     }) 
   } div.appendChild(frag); 
 }
+
+
+  
+
+
 
